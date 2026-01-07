@@ -1,0 +1,30 @@
+package alerts;
+
+import java.time.Duration;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Alert_box {
+public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver= new ChromeDriver();
+		//driver.get("https://www.google.com/");
+		driver.navigate().to("https://www.tutorialspoint.com/selenium/practice/alerts.php");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//driver.findElement(By.xpath("//button[@onclick='showAlert()']")).click();
+		WebElement element=driver.findElement(By.xpath("/html/body/main/div/div/div[2]/div[3]/button"));
+		element.click();
+		Alert alert=driver.switchTo().alert();
+		//System.out.println(alert.getText());
+		//alert.accept();
+		alert.dismiss();
+        //driver.quit();
+		
+		
+	}
+}
