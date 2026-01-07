@@ -73,5 +73,6 @@ public class Demo {
    {
 	  // driver.close();
 	   driver.quit();
+	   //both are same
    }
 }
